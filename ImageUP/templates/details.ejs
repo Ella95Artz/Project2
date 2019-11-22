@@ -1,0 +1,121 @@
+<!--
+ CS7025 Programming for Digital Media 2018-19 
+ Elena Artz
+ Project No. 2: An Image Sharing Application 
+ Project2 Image Detail -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Details Image Gallery</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <link href="https://fonts.googleapis.com/css?family=Patua+One" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Barlow" rel="stylesheet">   
+    <link rel="stylesheet" type="text/css" href="/layout.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/layout.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
+    <script type="text/javascript" src="/update.js" defer></script>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/"> <span class="glyphicon glyphicon-camera"></span> Gallery</a>
+            </div>
+             <ul class="nav navbar-nav navbar-right">
+                    <% if(currentUser){ %>
+                      <li><a href="/uploads"><span class="glyphicon glyphicon-upload"></span> Upload</a></li>
+                      <li><a href="/profile"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+                      <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                    <% }  else { %>
+                      <li><a href="/login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    <% } %>
+                </ul>
+        </div>
+    </nav>
+    
+    <div class= "container">
+      <h4>Image Details</h4>
+      <div class="row">
+      <div class="col-sm-6">
+        <img class="size" src="/<%=path %>" id="<%= currImg %>" alt="Image titled <%=title %>">
+      </div>
+      <div class="col-sm-6">
+        <div class="row">
+          <div class="col-md-12">
+            <h2><%= title%></h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <span class="label label-success">Image</span>
+            <span>No. <%= currImg %> </span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <span>Published by</span><span class="c"><%= username %> </span>
+            <span>on </span><span class="c"><%= datetime %> </span>
+          </div>
+        </div>
+        <div class="row">
+         <div class="col-md-3">
+            <button  type="button" id="likes" class=" btn btn-primary glyphicon glyphicon-thumbs-up" aria-hidden="true" onclick="addLike()"></button>
+            <span id="allLikes"><%= likes %></span>
+         </div>
+         <div class="col-md-3">
+            <span class=" glyphicon glyphicon-comment" aria-hidden="true"></span>
+            <span id="numcomment"><%= comments %></span> 
+         </div>
+        </div>
+
+        <% if (currentUser) { %>
+          <form action="" class="form">
+             <div id="comment-message" class="form-row">
+                <span class="input-group-addon glyphicon glyphicon-comment"></span>
+                <textarea type="text" name = "comment" id = "comment"  placeholder = "Leave Your Comment here" class="form-control" rows="2" required></textarea>
+             </div>
+             <br/>
+             <button type="submit" class="btn btn-primary">Send Comment</button>
+          </form>
+        <% } %>
+
+        <h2 class="page-header">Comments</h2>
+        <div class="comment-list" id="comments">
+        <section class="row ">
+              <% for (var i = 0; i < commentsList.length; i++){ %>
+                <article class="row" >
+              <div class="col-md-2 col-sm-2 hidden-xs">
+                  <img class="img-circle img-responsive" src="http://www.tangoflooring.ca/wp-content/uploads/2015/07/user-avatar-placeholder.png" />
+              </div>
+              <div class="col-md-10 col-sm-10">
+                <div class="panel panel-default arrow left">
+                  <div class="panel-body">
+                    <header class="text-left">
+                      <div class="comment-user"><i class="fa fa-user"></i> <%= commentsList[i].username %></div>
+                      <time class="comment-date" datetime="16-12-2014 01:05"><i class="fa fa-clock-o"></i> <%= commentsList[i].date.toISOString().slice(0, 19).replace('T', ' '), %></time>
+                    </header>
+                    <div class="comment-post">
+                      <p><%= commentsList[i].text %></p>
+                    </div>                  
+                  </div>
+                </div>
+              </div>
+            </article>
+              <% } %> 
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer id="footer">My Photo Booth</footer>
+</body>
+</html>
+

@@ -1,0 +1,82 @@
+<!--
+ CS7025 Programming for Digital Media 2018-19 
+ Elena Artz
+ Project No. 2: An Image Sharing Application 
+ Project2 Login and Register -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Login and Register</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Patua+One" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css?family=Barlow" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/layout.css">
+</head>
+<body>
+  
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/"> <span class="glyphicon glyphicon-camera"></span> Gallery</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+   <h1>Login &amp; Sign Up</h1>
+    <div class="col-md-6">
+         <h2> <i class="fa fa-lock"></i>    Login</h2>
+
+  <form action ="/login" method="POST">
+    <div class="form-group">
+      <p>Enter your username and password to log in:</p>
+      <label for="text"><i class="fa fa-user fa-fw"></i> Username:</label>
+      <input type="name" class="form-control" id="name" placeholder="Enter username" name="username">
+    </div>
+    <div class="form-group">
+      <label for="pwd"><i class="fa fa-key fa-fw" aria-hidden="true"></i> Password:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password">
+    </div> 
+    <div class="sbutton">
+     <button type="submit" class="btn btn-primary">Login!</button>
+    </div>
+  </form>
+    </div>
+    <div class="col-md-6">
+        <h2><i class="fa fa-pencil"></i>    Sign Up Now</h2>
+            <p>Fill in the form below to register and get instant access:</p>
+
+        <form role="form" action="/register" method="POST" class="registration-form" id="register">
+               <div class="form-group">
+                  <label for="form-first-name">First name</label>
+                  <input type="text" name="firstname" placeholder=" Enter First name" class="form-first-name form-control" id="form-first-name"  >
+               </div>
+               <div class="form-group">
+                  <label for="form-last-name" >Last name</label>
+                  <input type="text" name="lastname" placeholder="Enter Last name" class="form-last-name form-control" id="form-last-name"  >
+               </div>
+               <div class="form-group">
+                  <label for="form-email">Email</label>
+                  <input type="text" name="email" placeholder="Enter email" class="form-email form-control" id="form-email"  >
+               </div>
+               <div class="form-group">
+                  <label for="form-email">Set Username</label>
+                  <input type="text" name="set_username" placeholder="Enter username" class="form-email form-control" id="form-email"  >
+               </div>
+               <div class="form-group">
+                  <label for="form-email">Set Password</label>
+                  <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="set_password"  >
+               </div>
+                  <div class="sbutton">
+                <button type="submit" class=" btn btn-primary">Sign Up!</button>
+                  </div>
+          </form>
+        </div>
+    </div>
+    <footer id="footer">  My Photo Booth</footer>
+  </body>
+</html>

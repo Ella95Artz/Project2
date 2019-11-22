@@ -1,0 +1,203 @@
+/** 
+ * CS7025 Programming for Digital Media 2018-19 
+ * Elena Artz
+ * Project No. 2: An Image Sharing Application 
+ */
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body{
+	font: 15px/1.5 'Barlow', sans-serif;
+	margin:0;
+	padding: 0;
+	position: relative;
+	background-color: #428daa;
+	text-align: left;
+	color: white;
+	min-height: 100%;
+	padding-bottom: 50px;
+	box-sizing:inherit;
+}
+
+.container {
+	max-width:80%;
+	min-height:90%;
+	margin:auto;
+	overflow-x:hidden;
+	padding-bottom: 80px;
+
+}
+
+h1{
+	text-align: center;
+	color: #f2f7f9;
+	font: 40px/1.5 'Patua One', cursive;
+}
+
+
+h3{
+	text-align: left;
+	color: #f2f7f9;
+	font: 40px/1.5 'Patua One', cursive;
+	color: white;
+}
+h4{
+	margin-bottom: 5%;
+}
+
+p{
+	text-align: center;
+}
+
+footer{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding:8px;
+	background-color:#222222;
+	color:#fff;
+	font-size:0.8em;
+	text-align: left;
+}
+
+
+li {
+	display:inline;
+	padding:0 20px 0 20px;
+	
+}
+
+li  a{ 
+	color: #fff;
+	font-size:1em;	
+	font-weight:700;
+}
+
+a.button {
+    appearance: button;
+    text-decoration: none;
+    color: initial;
+}
+
+.col-md-6 p {
+	text-align: left; 
+	margin-bottom: 5%;
+}
+
+#intro div {
+	margin:auto; 
+	margin-top: 20%;
+	padding: 20px; 
+	border:dotted; 
+	background-color: #3e7f99; 
+	border-radius:25px;
+}
+
+
+
+#intro2 div {
+	margin:auto; 
+	margin-top: 20%;
+	padding: 20px; 
+	border:dotted; 
+	background-color: #3e7f99; 
+	border-radius:25px;
+}
+
+
+
+#intro{
+  width: 15%;
+  position: fixed;
+  z-index: 1;
+  left: 2%;
+  overflow-x: hidden;
+  padding: 8px 0;
+}
+
+
+}
+
+#intro i{
+		font-size: 10em;
+	}
+#intro a{
+		margin-top: 5%; 
+	}
+.main{
+	margin-left: 20%;
+	overflow-x: hidden;
+}
+
+textarea {
+	width:100%;
+	background-color: green;
+}
+
+.size {
+  width: 100%;
+  height: auto;
+}
+
+
+.row{
+	
+	margin-top:3%;
+	margin-bottom: 3%;
+	display: flex;
+   flex-wrap: wrap;
+}
+
+
+.comment-list .row {
+  margin-bottom: 0px;
+   
+}
+.comment-list .panel .panel-heading {
+  padding: 4px 15px;
+  position: absolute;
+  border:none;
+  /*Panel-heading border radius*/
+  border-top-right-radius:0px;
+  top: 1px;
+}
+.comment-list .panel .panel-heading.right {
+  border-right-width: 0px;
+  /*Panel-heading border radius*/
+  border-top-left-radius:0px;
+  right: 16px;
+}
+.comment-list .panel .panel-heading .panel-body {
+  padding-top: 6px;
+}
+
+section{
+	color:black;
+	margin-top: 5%;
+	padding-left: 5%;
+}
+#profile-info,.comment-date, 
+.comment-user{
+	color:#3b5786;
+}
+.comment-post p{
+	text-align: left;
+}
+.col-md-3{
+	margin:5% 0 5% 2%;
+}
+.col-md-12 span{
+	margin-left: 2%;
+}
+.col-md-3 span{ 
+	margin-left: 4%;
+}
+
+.c{
+	color: 	#180689;
+	font-weight: bold;
+}

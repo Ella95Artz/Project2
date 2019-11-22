@@ -1,0 +1,67 @@
+<!--
+ CS7025 Programming for Digital Media 2018-19 
+ Elena Artz
+ Project No. 2: An Image Sharing Application 
+ Project2 Index -->
+
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Gallery</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="https://fonts.googleapis.com/css?family=Patua+One" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Barlow" rel="stylesheet">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+      <link rel="stylesheet" type="text/css" href="/layout.css">
+   </head>
+   <body>
+      <nav class="navbar navbar-inverse">
+         <div class="container-fluid">
+            <div class="navbar-header">
+               <a class="navbar-brand" href="/"> <span class="glyphicon glyphicon-camera"></span> Gallery</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-right">
+               <% if(currentUser){ %>
+               <li><a href="/uploads"><span class="glyphicon glyphicon-upload"></span> Upload</a></li>
+               <li><a href="profile"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+               <li><a href="http:/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+               <% }  else { %>
+               <li><a href="/login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+               <% } %>
+            </ul>
+         </div>
+      </nav>
+     
+      <% if(currentUser ==undefined){ %>
+      <div id="intro">
+         <div>
+            <h1><i class="fa fa-camera-retro" aria-hidden="true"></i></h1>
+            <p>Create an account or login</p>
+            <a href="/login.html" class="btn btn-success btn-block">Login and Register</a>
+         </div>
+      </div>
+      <% } %>
+      
+      <div class= "container main">
+      <h1>Welcome to My Photo Booth</h1>
+      <p>Our amazing Image Sharing Applicaton</p>
+      <p>Show off your favourite Photos and find Inspiration. </p>
+      <div class="row">
+         <h2>Photo Booth</h2>
+         <div class="row">
+            <% for (var i=0; i< images.length; i++) { %>
+            <div class="col-lg-3 col-sm-4 col-5 d-block mb-4 h-100">
+               <a href="/images/<%= images[i]['imgID'] %>"<%= images[i].imgTitle %>">
+               <img src=" <%= images[i].path+images[i].filename %>" class="thumbnail img-responsive" alt="<%= images[i].imgTitle %>">
+               </a> 
+            </div>
+            <% } %>  
+         </div>
+      </div>
+      <footer id="footer">My Photo Booth</footer>
+   </body>
+</html>
+
